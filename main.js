@@ -7,6 +7,9 @@ var github = buildLink('https://github.com/seanmcp', 'GitHub');
 var linkedin = buildLink('https://linkedin.com/in/seanmcp', 'LinkedIn');
 var email = buildLink('mailto:sean@seanmcp.com', 'sean@seanmcp.com');
 
+var yesIAm = 'Yeah!';
+var noIAmNot = 'Nope.';
+
 function buildList(list, andOr) {
     var output = ''
     list.forEach(function(item, index) {
@@ -24,9 +27,9 @@ function buildList(list, andOr) {
 function buildHeader() {
     var heading = document.createElement('h1');
     if (amILookingForWork) {
-        heading.textContent = 'Yeah!';
+        heading.textContent = yesIAm;
     } else {
-        heading.textContent = 'Nope.'
+        heading.textContent = noIAmNot
     }
     site.appendChild(heading);
 }
@@ -153,7 +156,26 @@ function replacePrompt(element, answer) {
     element.appendChild(quote);
 }
 
+function buildMeta() {
+    if (amILookingForWork) {
+        document.title = yesIAm;
+        buildFavicon('yes');
+    } else {
+        document.title = noIAmNot;
+        buildFavicon('no');
+    }
+}
+
+function buildFavicon(answer) {
+    var favicon = document.createElement('link');
+    favicon.rel = 'shortcut icon';
+    favicon.type = 'image/png';
+    favicon.href = `./${answer}.png`;
+    document.querySelector('head').appendChild(favicon);
+}
+
 function buildSite() {
+    buildMeta();
     buildHeader();
     buildContent();
 }
