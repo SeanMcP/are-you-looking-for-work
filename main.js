@@ -46,7 +46,7 @@ function buildContent() {
 
 function buildYesContent() {
     var p = document.createElement('p');
-    p.innerHTML = `I'm interested in building applications that <strong>help people help people</strong>. I'm motivated by projects that solve real problems and make the world a better place. Does that match the <strong>mission statement</strong> of the company you have in mind?`
+    p.innerHTML = `I'm interested in building applications that <strong>help people help people</strong>. I'm motivated by projects that solve problems that make the world a better place. Does that match the <strong>mission statement</strong> of the company you have in mind?`
     site.appendChild(p);
 
     var prompt = document.createElement('section');
