@@ -125,7 +125,7 @@ function buildMissionMatchContent() {
 
 function buildPositionMatchContent() {
     var p = document.createElement('p');
-    p.innerHTML = `Alright! I'm looking forward to hearing more about the company and position. Please <strong>send me an email</strong> with the details: ${email}.`
+    p.innerHTML = `Alright! I'm looking forward to hearing more about the company and position. Please <strong>send me an email</strong> with the subject line "<strong>It's a match!</strong>" and the details: ${email}.`
     site.appendChild(p);
 
     var p2 = document.createElement('p');
